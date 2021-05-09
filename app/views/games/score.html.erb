@@ -5,6 +5,8 @@
   <% if @valid %>
     <% if @english %>
       <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+      <p>Your score for the current game is: <strong> <%= @score %> </strong> points.</p>
+      <p>Your overall score is: <strong> <%= @overall %> </strong> points.</p>
     <% else %>
       <p>Sorry but <strong> <%= @word %> </strong>does not seem to be a valid English word.</p>
     <% end %>

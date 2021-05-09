@@ -14,6 +14,8 @@ class GamesController < ApplicationController
     @word = params[:word].upcase
     @valid = is_valid?(@word, @letters)
     @english = is_english?(@word)
+    @score = calculate_score(@word)
+    @overall = 5
   end
 
   private
@@ -28,5 +30,9 @@ class GamesController < ApplicationController
     response = URI.open("https://wagon-dictionary.herokuapp.com/#{word}")
     json = JSON.parse(response.read)
     json["found"]
+  end
+
+  def calculate_score(word)
+    (word.length).pow(3)
   end
 end

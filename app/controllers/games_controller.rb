@@ -14,8 +14,17 @@ class GamesController < ApplicationController
     @word = params[:word].upcase
     @valid = is_valid?(@word, @letters)
     @english = is_english?(@word)
-    @score = calculate_score(@word)
-    @overall = 5
+
+    if @valid && @english
+      @score = calculate_score(@word)
+      # @overall += @score
+      session[:overall] += @score
+      raise
+    end
+
+    @overall = session[:overall]
+
+    # raise
   end
 
   private

@@ -15,16 +15,13 @@ class GamesController < ApplicationController
     @valid = is_valid?(@word, @letters)
     @english = is_english?(@word)
 
+    session[:score] = 0 if session[:score] == nil
+
     if @valid && @english
       @score = calculate_score(@word)
-      # @overall += @score
-      session[:overall] += @score
-      raise
+      session[:score] += @score
     end
-
-    @overall = session[:overall]
-
-    # raise
+    @overall = session[:score]
   end
 
   private

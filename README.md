@@ -9,7 +9,7 @@ You are given a random set of letters and your task is to think of the longest E
 3. `gem install rails -v 6.0`
 4. `bundle install`
 5. `rails s`
-6. Go to `localhost:3000` in your browser
+6. Go to `localhost:3000/new` in your browser
 ## :muscle: Contribute
 Contributions are always welcome! Share your insights and create a pull request.
 ## :pray: Support
